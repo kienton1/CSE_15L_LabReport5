@@ -116,3 +116,14 @@ public class ArrayExamples {
 
 ```
 **The Test stayed the same**
+![Image](Lab5-2.png)
+The bug was that the original code changed the array one by one while using the same array as a reference. This means that after the first element was changed to the last element, the for loop reached the last loop and referenced the first element of the same array and because this element was already changed to the last element of the original array, the last element of the altered array will always be equal to the last element of the original array.
+
+**Test.sh that ran the tests**
+```
+javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
+java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ArrayTests
+```
+
+**Reflection**
+Something cool that I learned was vim. I thought it was really interesting that I could go line to line and then also stop at a certain line of code and then debug from their. Before this I would us another website to go line to line in my code, but by using vim I can run two different java scripts and then go through only one of them to debug.
